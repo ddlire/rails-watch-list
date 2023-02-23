@@ -1,13 +1,13 @@
 <h4><%= @list.name %></h4>
 
   <div class="grid-card p-3">
-    <% @movies.each do |movie| %>
+    <% @bookmarks.each do |bk| %>
     <div class= "movie-card mt-3">
-      <%= image_tag movie.poster_url %>
-      <h4><%= movie.title %></h4>
-      <%= link_to raw('<i class="fa-regular fa-trash-can"></i>'), list_bookmark_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <% movie.rating.to_i.times do %>⭐ <% end %>
-      <p><%= movie.overview %></p>
+      <%= image_tag bk.movie.poster_url %>
+      <h4><%= bk.movie.title %></h4>
+      <%= link_to raw('<i class="fa-regular fa-trash-can"></i>'), list_bookmark_path(@list, bk), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% bk.movie.rating.to_i.times do %>⭐ <% end %>
+      <p><%= bk.movie.overview %></p>
     </div>
     <% end %>
   </div>
