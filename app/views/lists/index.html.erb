@@ -1,0 +1,24 @@
+<div class="banner">
+  <h1>Save any kind of movie</h1>
+</div>
+<div class="d-flex justify-between p-4">
+  <div class="grid-card p-3 col-8">
+    <% @lists.each do |list| %>
+    <div class= "list-card mx-auto mt-3">
+      <%= link_to raw("<h3 class= 'text-center'>#{list.name}</h3>"), list_path(list.id)  %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="card col-4 p-3">
+    <div>
+      <h3>Add a new list</h3>
+    </div>
+    <div>
+      <%= simple_form_for @list do |f|%>
+      <%= f.input :name %>
+      <%= f.submit "New list", class: "btn btn-success mt-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

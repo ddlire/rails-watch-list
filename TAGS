@@ -1,0 +1,73 @@
+
+db/migrate/20230223104035_create_bookmarks.rb,97
+class CreateBookmarks < ActiveRecord::Migration[7.0]CreateBookmarks1,0
+  def changechange2,0
+
+db/migrate/20230223104003_create_lists.rb,89
+class CreateLists < ActiveRecord::Migration[7.0]CreateLists1,0
+  def changechange2,0
+
+db/migrate/20230223103942_create_movies.rb,91
+class CreateMovies < ActiveRecord::Migration[7.0]CreateMovies1,0
+  def changechange2,0
+
+config/application.rb,174
+module RailsWatchListRailsWatchList21,0
+  class Application < Rails::ApplicationApplication22,0
+  class Application < Rails::ApplicationRailsWatchList::Application22,0
+
+app/channels/application_cable/channel.rb,177
+module ApplicationCableApplicationCable1,0
+  class Channel < ActionCable::Channel::BaseChannel2,0
+  class Channel < ActionCable::Channel::BaseApplicationCable::Channel2,0
+
+app/channels/application_cable/connection.rb,195
+module ApplicationCableApplicationCable1,0
+  class Connection < ActionCable::Connection::BaseConnection2,0
+  class Connection < ActionCable::Connection::BaseApplicationCable::Connection2,0
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob1,0
+
+app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper1,0
+
+app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController1,0
+
+app/models/bookmark.rb,542
+class Bookmark < ApplicationRecordBookmark1,0
+  belongs_to :movie, required: truemovie2,0
+  belongs_to :movie, required: truemovie=2,0
+  belongs_to :movie, required: truebuild_movie2,0
+  belongs_to :movie, required: truecreate_movie2,0
+  belongs_to :movie, required: truecreate_movie!2,0
+  belongs_to :list, required: truelist3,0
+  belongs_to :list, required: truelist=3,0
+  belongs_to :list, required: truebuild_list3,0
+  belongs_to :list, required: truecreate_list3,0
+  belongs_to :list, required: truecreate_list!3,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord1,0
+
+app/models/list.rb,488
+class List < ApplicationRecordList1,0
+  has_many :bookmarks, dependent: :destroybookmarks2,0
+  has_many :bookmarks, dependent: :destroybookmarks=2,0
+  has_many :bookmarks, dependent: :destroybookmark_ids2,0
+  has_many :bookmarks, dependent: :destroybookmark_ids=2,0
+  has_many :movies, through: :bookmarksmovies3,0
+  has_many :movies, through: :bookmarksmovies=3,0
+  has_many :movies, through: :bookmarksmovie_ids3,0
+  has_many :movies, through: :bookmarksmovie_ids=3,0
+
+app/models/movie.rb,194
+class Movie < ApplicationRecordMovie1,0
+  has_many :bookmarksbookmarks2,0
+  has_many :bookmarksbookmarks=2,0
+  has_many :bookmarksbookmark_ids2,0
+  has_many :bookmarksbookmark_ids=2,0
+
+app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer1,0
