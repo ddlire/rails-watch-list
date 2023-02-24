@@ -1,10 +1,15 @@
-test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
 
-local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
+development:
+  <<: *default
+  database: rails-watch-list_development
+
+test:
+  <<: *default
+  database: rails-watch-list_test
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
