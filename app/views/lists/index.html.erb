@@ -5,6 +5,11 @@
   <div class="grid-card p-3 col-8">
     <% @lists.each do |list| %>
     <div class= "list-card mx-auto mt-3">
+      <% if list.photo.attached? %>
+        <%= cl_image_tag list.photo.key, alt: "Picture for list: #{list.name}" %>
+      <% else %>
+        <%= image_tag 'salle-cinema-vide-chaises_651396-2891.avif' %>
+      <% end %>
       <%= link_to raw("<h3 class= 'text-center'>#{list.name}</h3>"), list_path(list.id)  %>
     </div>
     <% end %>
@@ -17,6 +22,7 @@
     <div>
       <%= simple_form_for @list do |f|%>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "New list", class: "btn btn-success mt-3" %>
       <% end %>
     </div>

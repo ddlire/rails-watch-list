@@ -1,0 +1,5 @@
+.list-banner {
+  width: 100 vw;
+  height: 50 vh;
+  background-image: url("<%= cl_image_path @list.photo.key %>");
+}

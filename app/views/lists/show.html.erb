@@ -1,4 +1,11 @@
-<h4><%= @list.name %></h4>
+<div class="list-banner">
+  <h4><%= @list.name %></h4>
+  <% if @list.photo.attached? %>
+    <%= cl_image_tag @list.photo.key, alt: "Picture for list: #{@list.name}" %>
+  <% else %>
+    <%= image_tag 'salle-cinema-vide-chaises_651396-2891.avif' %>
+  <% end %>
+</div>
 
   <div class="grid-card p-3">
     <% @bookmarks.each do |bk| %>
