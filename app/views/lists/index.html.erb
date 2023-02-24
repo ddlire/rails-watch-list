@@ -4,18 +4,20 @@
 <div class="d-flex justify-between p-4">
   <div class="grid-card p-3 col-8">
     <% @lists.each do |list| %>
-    <div class= "list-card mx-auto mt-3">
-      <% if list.photo.attached? %>
-        <%= cl_image_tag list.photo.key, alt: "Picture for list: #{list.name}" %>
-      <% else %>
-        <%= image_tag 'salle-cinema-vide-chaises_651396-2891.avif' %>
+      <%= link_to list_path(list.id) do %>
+        <div class= "list-card mx-auto mt-3">
+          <% if list.photo.attached? %>
+            <%= cl_image_tag list.photo.key, alt: "Picture for list: #{list.name}" %>
+          <% else %>
+            <%= image_tag 'salle-cinema-vide-chaises_651396-2891.avif' %>
+          <% end %>
+          <span><h3 class= 'text-center'><%= list.name %></h3></span>
+        </div>
       <% end %>
-      <%= link_to raw("<h3 class= 'text-center'>#{list.name}</h3>"), list_path(list.id)  %>
-    </div>
     <% end %>
   </div>
 
-  <div class="card col-4 p-3">
+  <div class="new-card col-4 p-3">
     <div>
       <h3>Add a new list</h3>
     </div>

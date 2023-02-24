@@ -1,14 +1,14 @@
 .banner {
   height: 80vh;
   width: 100vw;
-  background-image:  asset_url('fond-film-abstrait_23-2149546025.avif');
-  backdrop-filter: brightness(60);
+  background-image:  asset_url('bande-film-cinema.avif');
   background-size: cover;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   h1 {
     font-family: $title-font;
+    font-size: 80px;
+    color: #CC2022;
   }
 }

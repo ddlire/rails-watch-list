@@ -1,7 +1,10 @@
 .movie-card{
-
+  height: 30vh;
+  width: 40vw;
+  display: flex;
   .image {
-    width: 80%;
-    height: auto;
+    height: 30vh;
+    width: 10vw;
+    object-fit: cover;
   }
 }

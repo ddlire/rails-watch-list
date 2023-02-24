@@ -1,10 +1,22 @@
 .list-card {
-  background-size: cover;
   box-shadow: 5px 5px 10px #183642;
-  height: 20vh;
-  width: 20vw;
+  height: 25vh;
+  width: 25vw;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  position: relative;
+  margin-top: 10px;
+  img {
+    height:25vh;
+    width: 25vw;
+    object-fit: cover;
+  }
+  span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
 }

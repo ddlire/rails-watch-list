@@ -1,5 +1,19 @@
 .list-banner {
   width: 100 vw;
   height: 50 vh;
-  background-image: url("<%= cl_image_path @list.photo.key %>");
+  position: relative;
+  img {
+    height:50vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #CC2022;
+  font-family: $title-font;
+  font-size: 60px;
+  }
 }
